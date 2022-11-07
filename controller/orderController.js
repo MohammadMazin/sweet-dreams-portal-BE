@@ -4,6 +4,7 @@ exports.getAllOrders = async(req, res, next) => {
     try {
         console.log('first')
         const q = await Order.find({})
+        console.log('second')
         res.json({
             success: true,
             data: q
