@@ -16,6 +16,7 @@ const ordersRoute = require('./routes/orderRoute')
 app.use('/orders', ordersRoute)
 
 //Connect to DB
+console.log(process.env.DB_CONNECTION)
 mongoose.connect(
     process.env.DB_CONNECTION, () => {
         console.log('Connected to Database')
