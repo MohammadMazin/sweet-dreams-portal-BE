@@ -24,4 +24,5 @@ mongoose.connect(
 )
 
 //Setting DB Port
-app.listen(5000)
+// app.listen(5000)
+app.listen(`0.0.0.0:${process.env.PORT}`)
