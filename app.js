@@ -25,4 +25,5 @@ mongoose.connect(
 
 //Setting DB Port
 // app.listen(5000)
-app.listen(`0.0.0.0:$PORT`)
+const PORT = 5000
+app.listen(process.env.PORT || PORT, () => console.log('running on ' + PORT))
