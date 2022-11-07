@@ -2,6 +2,7 @@ const Order = require('../models/orderModel')
 
 exports.getAllOrders = async(req, res, next) => {
     try {
+        console.log('first')
         const q = await Order.find({ data: -1 })
         res.json({
             success: true,
