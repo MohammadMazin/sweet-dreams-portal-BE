@@ -2,9 +2,7 @@ const Order = require('../models/orderModel')
 
 exports.getAllOrders = async(req, res, next) => {
     try {
-        console.log('first')
         const q = await Order.find({})
-        console.log('second')
         res.json({
             success: true,
             data: q
@@ -21,8 +19,8 @@ exports.getAllOrders = async(req, res, next) => {
 
 exports.addOrder = async(req, res, next) => {
     try {
-        const { name, location, quantity, paid, amount, phoneNumber, order } = req.body
-        const newOrder = await Order.create({ name, location, quantity, paid, amount, phoneNumber, order })
+        const { name, location, quantity, paid, amount, phoneNumber, deliveryType, order } = req.body
+        const newOrder = await Order.create({ name, location, quantity, paid, amount, phoneNumber, deliveryType, order })
         if (!newOrder)
             throw new Error('Failed to add Order')
         res.json({

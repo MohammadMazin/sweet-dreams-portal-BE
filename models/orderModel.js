@@ -29,6 +29,10 @@ const OrderSchema = new Schema({
         type: Number,
         default: 0
     },
+    deliveryType: {
+        type: Number,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now
